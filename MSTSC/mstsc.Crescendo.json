@@ -1,0 +1,38 @@
+{
+    "$schema" : "../Microsoft.PowerShell.Crescendo.Schema.json",
+    "Commands": [
+            {
+                "Verb": "Connect",
+                "Noun": "RemoteComputer",
+                "OriginalName": "mstsc.exe",
+                "Parameters": [
+                    {
+                        "Name": "ComputerName",
+                        "OriginalName": "/v",
+                        "ParameterType": "String"
+                    },
+                    {
+                        "Name": "Admin",
+                        "OriginalName": "/admin",
+                        "ParameterType": "Switch"
+                    },
+                    {
+                        "Name": "FullScreen",
+                        "OriginalName": "/f",
+                        "ParameterType": "Switch"
+                    },
+                    {
+                        "Name": "MultiMonitor",
+                        "OriginalName": "/multimon",
+                        "ParameterType": "Switch"
+                    }
+                ]
+            }
+        ] 
+}
+
+
+
+
+
+
