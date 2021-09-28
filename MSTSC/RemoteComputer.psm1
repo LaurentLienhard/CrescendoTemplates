@@ -14,19 +14,35 @@ class PowerShellCustomFunctionAttribute : System.Attribute {
 function Connect-RemoteComputer
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
-[CmdletBinding()]
+[CmdletBinding(DefaultParameterSetName='All')]
 
 param(
-[Parameter()]
+[Parameter(ParameterSetName='All')]
+[Parameter(ParameterSetName='Taille')]
 [String]$ComputerName,
-[Parameter()]
+[Parameter(ParameterSetName='All')]
+[Parameter(ParameterSetName='Taille')]
 [Switch]$Admin,
-[Parameter()]
+[Parameter(ParameterSetName='All')]
 [Switch]$FullScreen,
-[Parameter()]
+[Parameter(ParameterSetName='All')]
 [Switch]$MultiMonitor,
-[Parameter()]
-[Switch]$Prompt
+[Parameter(ParameterSetName='All')]
+[Parameter(ParameterSetName='Taille')]
+[Switch]$Prompt,
+[Parameter(ParameterSetName='Taille')]
+[Int]$Width = "800",
+[Parameter(ParameterSetName='Taille')]
+[Int]$Height = "600",
+[Parameter(ParameterSetName='All')]
+[Parameter(ParameterSetName='Taille')]
+[Int]$Shadow,
+[Parameter(ParameterSetName='All')]
+[Parameter(ParameterSetName='Taille')]
+[Switch]$Control,
+[Parameter(ParameterSetName='All')]
+[Parameter(ParameterSetName='Taille')]
+[Switch]$NoConsent
     )
 
 BEGIN {
@@ -61,6 +77,41 @@ BEGIN {
                }
          Prompt = @{
                OriginalName = '/prompt'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'Switch'
+               NoGap = $False
+               }
+         Width = @{
+               OriginalName = '/w'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'Int'
+               NoGap = $False
+               }
+         Height = @{
+               OriginalName = '/h'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'Int'
+               NoGap = $False
+               }
+         Shadow = @{
+               OriginalName = '/shadow'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'Int'
+               NoGap = $False
+               }
+         Control = @{
+               OriginalName = '/control'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'Switch'
+               NoGap = $False
+               }
+         NoConsent = @{
+               OriginalName = '/NoConsentPrompt'
                OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'Switch'
@@ -131,6 +182,26 @@ PROCESS {
 
 .PARAMETER Prompt
 
+
+
+.PARAMETER Width
+
+
+
+.PARAMETER Height
+
+
+
+.PARAMETER Shadow
+Numéro de la session à contrôler
+
+
+.PARAMETER Control
+Prise de main sur une session a distance
+
+
+.PARAMETER NoConsent
+Prise de main sans le consentement de l'utilisateur
 
 
 

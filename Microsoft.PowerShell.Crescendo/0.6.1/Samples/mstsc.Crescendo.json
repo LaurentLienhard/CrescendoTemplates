@@ -5,39 +5,74 @@
                 "Verb": "Connect",
                 "Noun": "RemoteComputer",
                 "OriginalName": "mstsc.exe",
+                "DefaultParameterSetName": "All",
                 "Parameters": [
                     {
                         "Name": "ComputerName",
+                        "ParameterSetName": ["All","Taille"],
                         "OriginalName": "/v",
                         "ParameterType": "String"
                     },
                     {
                         "Name": "Admin",
+                        "ParameterSetName": ["All","Taille"],
                         "OriginalName": "/admin",
                         "ParameterType": "Switch"
                     },
                     {
                         "Name": "FullScreen",
+                        "ParameterSetName": ["All"],
                         "OriginalName": "/f",
                         "ParameterType": "Switch"
                     },
                     {
                         "Name": "MultiMonitor",
+                        "ParameterSetName": ["All"],
                         "OriginalName": "/multimon",
                         "ParameterType": "Switch"
                     },
                     {
                         "Name": "Prompt",
+                        "ParameterSetName": ["All","Taille"],
                         "OriginalName": "/prompt",
                         "ParameterType": "Switch"
-                    }
+                    },
+                    {
+                        "Name": "Width",
+                        "DefaultValue": "800",
+                        "ParameterSetName": ["Taille"],
+                        "OriginalName": "/w",
+                        "ParameterType": "Int"
+                    },
+                    {
+                        "Name": "Height",
+                        "DefaultValue": "600",
+                        "ParameterSetName": ["Taille"],
+                        "OriginalName": "/h",
+                        "ParameterType": "Int"
+                    },
+                    {
+                        "Name": "Shadow",
+                        "ParameterSetName": ["All","Taille"],
+                        "Description": "Numéro de la session à contrôler",
+                        "OriginalName": "/shadow",
+                        "ParameterType": "Int"
+                    },
+                    {
+                        "Name": "Control",
+                        "ParameterSetName": ["All","Taille"],
+                        "Description": "Prise de main sur une session a distance",
+                        "OriginalName": "/control",
+                        "ParameterType": "Switch"
+                    },
+                    {
+                        "Name": "NoConsent",
+                        "Description": "Prise de main sans le consentement de l'utilisateur",
+                        "ParameterSetName": ["All","Taille"],
+                        "OriginalName": "/NoConsentPrompt",
+                        "ParameterType": "Switch"
+                    }              
                 ]
             }
         ] 
-}
-
-
-
-
-
-
+    }

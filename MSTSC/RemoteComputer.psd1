@@ -18,7 +18,7 @@ ModuleVersion = '0.0.1'
 # CompatiblePSEditions = @()
 
 # ID used to uniquely identify this module
-GUID = 'aeb046b8-deb1-4945-9875-e6669a101826'
+GUID = 'd7dd80e5-437c-4284-b59b-6ff2a6a0592a'
 
 # Author of this module
 Author = 'Laurent.Lienhard'
@@ -125,7 +125,7 @@ PrivateData = @{
     CrescendoVersion = '0.6.1'
 
     # CrescendoGenerated
-    CrescendoGenerated = '09/28/2021 20:28:07'
+    CrescendoGenerated = '09/28/2021 21:59:48'
 
 } # End of PrivateData hashtable
 
