@@ -24,7 +24,9 @@ param(
 [Parameter()]
 [Switch]$FullScreen,
 [Parameter()]
-[Switch]$MultiMonitor
+[Switch]$MultiMonitor,
+[Parameter()]
+[Switch]$Prompt
     )
 
 BEGIN {
@@ -52,6 +54,13 @@ BEGIN {
                }
          MultiMonitor = @{
                OriginalName = '/multimon'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'Switch'
+               NoGap = $False
+               }
+         Prompt = @{
+               OriginalName = '/prompt'
                OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'Switch'
@@ -117,6 +126,10 @@ PROCESS {
 
 
 .PARAMETER MultiMonitor
+
+
+
+.PARAMETER Prompt
 
 
 

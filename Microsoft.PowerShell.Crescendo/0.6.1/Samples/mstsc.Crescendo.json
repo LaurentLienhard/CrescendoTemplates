@@ -25,6 +25,11 @@
                         "Name": "MultiMonitor",
                         "OriginalName": "/multimon",
                         "ParameterType": "Switch"
+                    },
+                    {
+                        "Name": "Prompt",
+                        "OriginalName": "/prompt",
+                        "ParameterType": "Switch"
                     }
                 ]
             }
